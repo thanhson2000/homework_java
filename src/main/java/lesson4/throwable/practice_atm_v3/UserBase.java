@@ -60,9 +60,9 @@ public abstract class UserBase {
         this.expectedMoney = expectedMoney;
     }
 
-    public abstract Boolean checkLogin(String id,String password);
+    abstract public Boolean checkLogin(String id,String password);
 
-    public abstract Boolean checkWithDraw(double expectedMoney);
+    abstract public Boolean checkWithDraw(double expectedMoney);
 
     abstract public String getInfo();
 }
