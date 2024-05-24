@@ -26,6 +26,7 @@ public class Manager {
         for (Student student : studentList) {
             studentArrayList.add(student);
         }
+
     }
 
     public Manager() {
