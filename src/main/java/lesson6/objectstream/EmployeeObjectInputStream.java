@@ -21,7 +21,10 @@ public class EmployeeObjectInputStream {
             InputStream inputStream = new FileInputStream("/Users/thanhsonphan/Downloads/Employees.dat");
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
             ArrayList<Employee> employees = (ArrayList) objectInputStream.readObject();
-            System.out.println("Nhap yeu cau: ");
+            System.out.printf("1. Tim kiem nhan vien theo ten" +
+                    "\n2. Hien thi thong tin toan bo nhan vien" +
+                    "\n3. Tim kiem nhan vien theo id va thay doi thong tin" +
+                    "\n Nhap yeu cau: ");
             int i = scanner.nextInt();
             switch (i){
                 case 1:
@@ -38,6 +41,31 @@ public class EmployeeObjectInputStream {
                         System.out.println(employee.getId()+" "+employee.getName()+" "+employee.getAge()+" "+employee.getSalary());
                     }
                     break;
+                case 3:
+                    System.out.println("Nhap id can tim");
+                    int id = scanner.nextInt();
+                    for (Employee employee : employees) {
+                        if (employee.getId() == id){
+                            System.out.println("Nhap ten moi");
+                            String newName = scanner.next();
+                            employee.setName(newName);
+
+                            System.out.println("Nhap tuoi moi");
+                            int newAge = scanner.nextInt();
+                            employee.setAge(newAge);
+
+                            System.out.println("Nhap luong moi");
+                            float newSalary = scanner.nextFloat();
+                            employee.setSalary(newSalary);
+
+                            System.out.println("Sau khi cap nhat: "+employee.getId()+" "
+                                                            +employee.getName()+" "
+                                                            +employee.getAge()+" "
+                                                            +employee.getSalary());
+                        }
+                    }
+                    break;
+
             }
 
 
