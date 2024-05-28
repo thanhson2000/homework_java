@@ -17,21 +17,12 @@ public class Management {
         employees.add(employee);
         return employees;
     }
-    
-    public Employee findById(int id){
-        for (Employee employee : employees) {
-            if (id == employee.getId()){
-                 return employee;
-            }
-        }
-        return null;
-    }
-
 
     public ArrayList<Employee> deleteEmployee(int id){
         for (Employee employee : employees) {
             if(id == employee.getId()){
                 employees.remove(employee);
+                break;
             }
         }
         return employees;

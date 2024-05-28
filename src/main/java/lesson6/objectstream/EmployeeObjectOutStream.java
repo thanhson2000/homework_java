@@ -16,11 +16,11 @@ public class EmployeeObjectOutStream {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Management management = new Management();
-        int count = 0;
+        int count = 3;
 
-        while (count < 3) {
+        while (count > 0) {
             System.out.printf("1. Cap nhat thong tin cua nhan vien moi \n2. Xoa nhan vien theo id\n");
-            System.out.println("Nhap yeu cau: ");
+            System.out.printf("Ban con %d lan nhap .Nhap yeu cau: ",count);
             int i = scanner.nextInt();
             switch (i) {
                 case 1:
@@ -44,7 +44,7 @@ public class EmployeeObjectOutStream {
                     management.deleteEmployee(deleteId);
                     break;
             }
-            count++;
+            count--;
         }
 
         try {
